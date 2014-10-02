@@ -34,17 +34,23 @@ def online_and_phone_sales():
 		print "Guess there's some value to those salespeople after all."
 	else:
 		print "Time to fire the sales team! Online sales rule all!"
+		
+def generate_fancy_sales_report():
+	print "Ubermelon Sales Report: October 1, 2014\n"
+	print "******************************************"
+	
+	print "This month's revenue per melon:\n"
+	calculate_melon_revenue(count_melons_sold())
+	print "******************************************"
+	
+	print "This month's total sales, for online sales and in person:\n"
+	online_and_phone_sales()
+	print "******************************************"
+	
 
 def main():
-    print "******************************************"
-
-    calculate_melon_revenue(count_melons_sold())
-
-    print "******************************************"
     
-    online_and_phone_sales()
-    
-    print "******************************************"
+	generate_fancy_sales_report()
 
 
 if __name__ == "__main__":
