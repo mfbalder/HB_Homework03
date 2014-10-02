@@ -1,6 +1,6 @@
-def main():
-    print "******************************************"
-    f = open("orders_by_type.csv")
+def count_melons_sold():
+	"""Counts the number of each melon that is sold"""
+	f = open("orders_by_type.csv")
     melon_tallies = {"Musk": 0, "Hybrid": 0, "Watermelon": 0, "Winter": 0}
     for line in f:
         data = line.split(",")
@@ -8,6 +8,13 @@ def main():
         melon_count = int(data[2])
         melon_tallies[melon_type] += melon_count
     f.close()
+    return melon_tallies
+
+def main():
+    print "******************************************"
+    
+    melon_tallies = count_melons_sold()
+    
     melon_prices = { "Musk": 1.15, "Hybrid": 1.30, "Watermelon": 1.75, "Winter": 4.00 }
     total_revenue = 0
     for melon_type in melon_tallies:
